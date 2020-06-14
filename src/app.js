@@ -5,6 +5,7 @@ const geocode = require('./Utils/geocode')
 const weatherstack = require('./Utils/weatherstack')
 
 const app = express()
+const portHeroku = process.env.PORT || 3000 
 
 // Define paths for express. yung templates ksi binago ntn ung views, default kc sa hbs ung views folder. prng index
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -74,6 +75,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
+app.listen(portHeroku, () => {
   console.log('Server up')
 })
