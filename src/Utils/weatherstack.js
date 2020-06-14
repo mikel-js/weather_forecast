@@ -10,7 +10,7 @@ const weatherstack = (lat, long, callback) => {
     } else if (res.body.error) {
       console.log('Unable to connect to weather service')
     } else {
-      callback(undefined, `${res.body.current.weather_descriptions}. Current temp is ${res.body.current.temperature}`)
+      callback(undefined, `${res.body.current.weather_descriptions[0]}. Current temperature is ${res.body.current.temperature}. It feels like ${res.body.current.feelslike} degrees out and the humidity is ${res.body.current.humidity}%.`)
     }
   })
 }
